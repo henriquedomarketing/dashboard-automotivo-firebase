@@ -1,0 +1,46 @@
+﻿name: Robos do dashboard automotivo
+
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "Qual robo rodar?"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - all
+          - dados
+          - historico
+          - artigos
+          - saude
+
+  schedule:
+    - cron: "30 9 * * *"
+    - cron: "45 9 1,15 * *"
+
+jobs:
+  rodar-robos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar arquivos do repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar firebase-admin
+        run: npm install firebase-admin
+
+      - name: Rodar robos
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            node scripts/robots/runner.cjs "${{ github.event.inputs.modo }}"
+          else
+            node scripts/robots/runner.cjs all
+          fi
