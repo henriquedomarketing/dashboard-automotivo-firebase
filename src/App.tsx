@@ -113,6 +113,17 @@ const fallbackArticles = [
   },
 ];
 
+const articleImagesByTag: Record<string, string> = {
+  Carros: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80",
+  Motos: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=80",
+  Crédito: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+  Credito: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+  Regiões: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80",
+  Regioes: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80",
+  FIPE: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+  Pesados: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80",
+};
+
 const fallbackRankings = {
   carros: ["Fiat Strada", "VW Polo", "Chevrolet Onix", "Hyundai HB20", "Fiat Argo", "Toyota Corolla", "VW T-Cross", "Fiat Mobi", "Renault Kwid", "Chevrolet Tracker"],
   motos: ["Honda CG 160", "Honda Biz", "Honda Pop 110i", "Yamaha Fazer", "Honda Bros", "Honda PCX", "Yamaha Factor", "Honda XRE 190", "Yamaha Crosser", "Honda CB 300F"],
@@ -148,7 +159,13 @@ function formatDateLabel(dateString: string) {
 }
 
 function toNumber(value: unknown) {
-  return Number(String(value ?? "0").replace(/\./g, "").replace(",", ".").replace(/[^\d.-]/g, "")) || 0;
+  const text = String(value ?? "0").trim();
+
+  if (text.includes(".") && !text.includes(",")) {
+    return Number(text.replace(/[^\d.-]/g, "")) || 0;
+  }
+
+  return Number(text.replace(/\./g, "").replace(",", ".").replace(/[^\d.-]/g, "")) || 0;
 }
 
 function SimpleLineChart({ title, description, data }: { title: string; description: string; data: { label: string; value: number }[] }) {
@@ -496,3 +513,4 @@ export default function App() {
     </div>
   );
 }
+
