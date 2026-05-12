@@ -14,103 +14,84 @@ const sourceLinks: Record<string, string> = {
   "ANFAVEA + IBGE": "https://anfavea.com.br/",
 };
 
-const fallbackArticles = [
-  {
-    title: "Resumo do mês: carros seguem em recuperação no mercado brasileiro",
-    tag: "Carros",
-    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80",
-    summary: "O mercado de carros segue ativo, com destaque para emplacamentos, modelos de maior giro e oportunidades para lojistas.",
-    sourceName: "Fenabrave",
-    sourceUrl: sourceLinks.Fenabrave,
-    updatedAt: "Atualização automática",
-    content: [
-      "O mercado de carros no Brasil segue sendo uma das principais referências para entender o comportamento do consumidor automotivo. A leitura dos emplacamentos ajuda a identificar quais modelos ganham mais espaço, quais marcas mantêm presença forte e quais categorias podem representar oportunidades para lojistas, vendedores, consultores e profissionais de marketing.",
-      "Carros compactos, SUVs de entrada e picapes leves continuam relevantes porque atendem públicos diferentes. Os compactos conversam com quem busca economia e facilidade de revenda. SUVs e picapes trabalham percepção de valor, conforto e versatilidade.",
-      "Para o lojista, acompanhar os modelos mais emplacados e transferidos ajuda a tomar decisões melhores sobre estoque, campanhas e atendimento. Um veículo com boa presença no mercado tende a ter mais procura e melhor liquidez.",
-      "A leitura regional também é importante. Um modelo pode estar forte no ranking nacional, mas ter comportamento diferente em cada cidade. Por isso, cruzar dados de emplacamentos, transferências, estados e cidades ajuda a criar campanhas mais próximas da realidade local.",
-      "Fonte oficial utilizada nesta leitura: Fenabrave."
-    ],
-  },
-  {
-    title: "Motos mantêm procura forte e puxam volume no mês",
-    tag: "Motos",
-    image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=80",
-    summary: "As motos seguem com desempenho forte, impulsionadas por economia, mobilidade urbana e uso profissional.",
-    sourceName: "Fenabrave",
-    sourceUrl: sourceLinks.Fenabrave,
-    updatedAt: "Atualização automática",
-    content: [
-      "O mercado de motos continua sendo um dos segmentos mais dinâmicos do setor automotivo brasileiro. A procura por motocicletas está ligada à mobilidade urbana, economia no deslocamento, trabalho por aplicativo, entregas e facilidade de compra.",
-      "Modelos de entrada e baixa cilindrada costumam aparecer com destaque porque atendem um público amplo. Para muitos consumidores, a moto é uma solução prática para reduzir custo de transporte e ganhar agilidade no dia a dia.",
-      "A leitura mensal de emplacamentos ajuda lojas e profissionais de marketing a entender quais marcas e modelos merecem mais destaque em anúncios, vídeos e campanhas locais.",
-      "A comunicação para motos deve ser objetiva. Temas como economia, consumo, manutenção, uso profissional, entrada facilitada e financiamento costumam gerar bom entendimento para o público.",
-      "Fonte oficial utilizada nesta leitura: Fenabrave."
-    ],
-  },
-  {
-    title: "Crédito automotivo indica ritmo de compra do consumidor",
-    tag: "Crédito",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
-    summary: "O financiamento ajuda a entender o comportamento de compra, parcelamento, entrada e poder de consumo.",
-    sourceName: "Banco Central",
-    sourceUrl: sourceLinks["Banco Central"],
-    updatedAt: "Atualização automática",
-    content: [
-      "O crédito automotivo é um dos principais indicadores para entender o ritmo de compra no mercado de veículos. Muitos consumidores não decidem apenas pelo valor total do veículo, mas pela entrada, taxa, prazo e valor da parcela.",
-      "Quando o financiamento está mais ativo, o mercado tende a ter maior movimento, principalmente em veículos seminovos e faixas intermediárias de preço.",
-      "Para lojas de veículos, esse dado pode orientar campanhas com foco em parcela, simulação, bancos parceiros, aprovação e entrada facilitada.",
-      "A leitura do crédito deve ser combinada com FIPE, emplacamentos e transferências para criar uma visão completa do mercado.",
-      "Fonte oficial utilizada nesta leitura: Banco Central."
-    ],
-  },
-  {
-    title: "Estados e cidades mostram oportunidades regionais",
-    tag: "Regiões",
-    image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80",
-    summary: "A leitura regional ajuda a entender estados e cidades com maior movimentação automotiva.",
-    sourceName: "SENATRAN",
-    sourceUrl: sourceLinks.SENATRAN,
-    updatedAt: "Atualização automática",
-    content: [
-      "A análise regional é essencial para entender o mercado automotivo brasileiro. O Brasil tem realidades diferentes entre estados e cidades, e isso aparece no comportamento de compra, emplacamentos, transferências e perfil de frota.",
-      "Um estado com alto volume pode indicar economia mais aquecida, maior população, renovação de frota ou maior presença de lojas e concessionárias.",
-      "Para lojistas, olhar apenas o ranking nacional pode gerar decisão incompleta. A leitura regional ajuda a ajustar estoque, campanhas e argumentos comerciais.",
-      "Cidades médias também podem revelar mercados muito ativos, principalmente quando atendem regiões vizinhas ou polos comerciais, agrícolas e industriais.",
-      "Fonte oficial utilizada nesta leitura: SENATRAN."
-    ],
-  },
-  {
-    title: "FIPE ajuda a entender faixas de preço e oportunidades",
-    tag: "FIPE",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
-    summary: "A leitura por faixa de preço ajuda a identificar modelos acessíveis, intermediários e premium.",
-    sourceName: "FIPE",
-    sourceUrl: sourceLinks.FIPE,
-    updatedAt: "Atualização automática",
-    content: [
-      "A FIPE é uma referência importante para entender preço médio de veículos no Brasil. Mesmo que o valor real varie por cidade, estado, conservação, quilometragem e oferta local, a tabela ajuda a criar uma base comparativa.",
-      "Ao organizar veículos por faixa de preço, o painel facilita a leitura comercial. Faixas mais baixas atendem consumidores que buscam economia, primeiro veículo ou troca acessível.",
-      "Faixas intermediárias costumam concentrar seminovos, SUVs, sedans completos e modelos com maior valor agregado.",
-      "Para lojistas, a leitura por faixa ajuda a pensar estoque. Não basta comprar qualquer veículo; é preciso entender qual faixa conversa com o público local.",
-      "Fonte oficial utilizada nesta leitura: FIPE."
-    ],
-  },
-  {
-    title: "Pesados e transporte sinalizam atividade econômica",
-    tag: "Pesados",
-    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80",
-    summary: "O segmento de pesados mostra sinais ligados à logística, produção, serviços e atividade econômica.",
-    sourceName: "Fenabrave",
-    sourceUrl: sourceLinks.Fenabrave,
-    updatedAt: "Atualização automática",
-    content: [
-      "O mercado de pesados e médios transportes tem relação direta com logística, agronegócio, indústria, construção e serviços. Por isso, acompanhar esse segmento ajuda a entender movimentações econômicas mais amplas.",
-      "Quando caminhões e comerciais leves apresentam crescimento, pode haver sinal de renovação de frota, aumento de demanda por transporte ou expansão de atividades produtivas.",
-      "Para vendedores e empresas, esse segmento exige comunicação mais técnica. O cliente costuma avaliar consumo, manutenção, capacidade de carga, disponibilidade de peças, garantia e retorno sobre investimento.",
-      "No dashboard, pesados ganham leitura separada para que seus dados não fiquem escondidos dentro do volume geral de veículos.",
-      "Fonte oficial utilizada nesta leitura: Fenabrave."
-    ],
-  },
+const fallbackModels = {
+  carros: [
+    "Fiat Strada", "VW Polo", "Chevrolet Onix", "Hyundai HB20", "Fiat Argo",
+    "Toyota Corolla", "VW T-Cross", "Fiat Mobi", "Renault Kwid", "Chevrolet Tracker",
+    "Hyundai Creta", "Jeep Compass", "Toyota Hilux", "Jeep Renegade", "Honda HR-V",
+    "Fiat Pulse", "Nissan Kicks", "VW Virtus", "Honda City", "Chevrolet S10",
+  ],
+  motos: [
+    "Honda CG 160", "Honda Biz", "Honda Pop 110i", "Yamaha Fazer", "Honda Bros",
+    "Honda PCX", "Yamaha Factor", "Honda XRE 190", "Yamaha Crosser", "Honda CB 300F",
+    "Shineray SHI 175", "Honda NXR 160", "Yamaha Neo", "BMW G 310", "Honda Elite",
+    "Yamaha NMAX", "Honda ADV", "Haojue DK 160", "Shineray Jet", "Honda CG 125",
+  ],
+  pesados: [
+    "VW Delivery", "Mercedes Accelo", "Scania R", "Volvo FH", "Iveco Daily",
+    "Mercedes Atego", "VW Constellation", "Scania P", "Volvo VM", "Iveco Tector",
+    "Mercedes Actros", "DAF XF", "VW Meteor", "Volvo FM", "Scania G",
+    "Mercedes Sprinter", "Iveco Stralis", "MAN TGX", "VW Worker", "DAF CF",
+  ],
+};
+
+const fallbackBrands = {
+  carros: [
+    "Fiat", "Volkswagen", "Chevrolet", "Hyundai", "Toyota",
+    "Jeep", "Renault", "Honda", "Nissan", "BYD",
+    "Caoa Chery", "Peugeot", "Citroën", "Ford", "BMW",
+    "Mercedes-Benz", "Audi", "GWM", "Mitsubishi", "Kia",
+  ],
+  motos: [
+    "Honda", "Yamaha", "Shineray", "Mottu", "BMW",
+    "Haojue", "Royal Enfield", "Kawasaki", "Suzuki", "Dafra",
+    "Triumph", "KTM", "Ducati", "Bajaj", "Harley-Davidson",
+    "Avelloz", "Bull", "Voltz", "Kymco", "Watts",
+  ],
+  pesados: [
+    "Mercedes-Benz", "Volkswagen", "Scania", "Volvo", "Iveco",
+    "DAF", "MAN", "Ford", "Agrale", "Hyundai",
+    "Foton", "JAC", "Fiat", "Peugeot", "Renault",
+    "Citroën", "Mitsubishi", "Kia", "Maxus", "Shacman",
+  ],
+};
+
+const fallbackStats = {
+  carros: { emplacados: "173.197", transferidos: "812.340", variacao: "+8,4%" },
+  motos: { emplacados: "143.517", transferidos: "286.992", variacao: "+5,7%" },
+  pesados: { emplacados: "12.906", transferidos: "41.580", variacao: "+4,2%" },
+};
+
+const fallbackStates = [
+  { uf: "SP", nome: "São Paulo", total: 38420 },
+  { uf: "MG", nome: "Minas Gerais", total: 17980 },
+  { uf: "PR", nome: "Paraná", total: 13560 },
+  { uf: "RJ", nome: "Rio de Janeiro", total: 11830 },
+  { uf: "RS", nome: "Rio Grande do Sul", total: 10770 },
+];
+
+const fallbackCities = [
+  { uf: "PR", cidade: "Curitiba", total: 4920 },
+  { uf: "PR", cidade: "Maringá", total: 1640 },
+  { uf: "PR", cidade: "Londrina", total: 1520 },
+  { uf: "PR", cidade: "Guarapuava", total: 640 },
+  { uf: "PR", cidade: "Campo Mourão", total: 410 },
+];
+
+const fallbackChart = [
+  { label: "Mar/25", value: 1.43 },
+  { label: "Abr/25", value: 1.42 },
+  { label: "Mai/25", value: 1.42 },
+  { label: "Jun/25", value: 1.41 },
+  { label: "Jul/25", value: 1.39 },
+  { label: "Ago/25", value: 1.39 },
+  { label: "Set/25", value: 1.38 },
+  { label: "Out/25", value: 1.42 },
+  { label: "Nov/25", value: 1.40 },
+  { label: "Dez/25", value: 1.38 },
+  { label: "Jan/26", value: 1.41 },
+  { label: "Fev/26", value: 1.42 },
+  { label: "Mar/26", value: 1.43 },
 ];
 
 const articleImagesByTag: Record<string, string> = {
@@ -124,51 +105,81 @@ const articleImagesByTag: Record<string, string> = {
   Pesados: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80",
 };
 
-const fallbackRankings = {
-  carros: ["Fiat Strada", "VW Polo", "Chevrolet Onix", "Hyundai HB20", "Fiat Argo", "Toyota Corolla", "VW T-Cross", "Fiat Mobi", "Renault Kwid", "Chevrolet Tracker"],
-  motos: ["Honda CG 160", "Honda Biz", "Honda Pop 110i", "Yamaha Fazer", "Honda Bros", "Honda PCX", "Yamaha Factor", "Honda XRE 190", "Yamaha Crosser", "Honda CB 300F"],
-  pesados: ["VW Delivery", "Mercedes Accelo", "Scania R", "Volvo FH", "Iveco Daily", "Mercedes Atego", "VW Constellation", "Scania P", "Volvo VM", "Iveco Tector"],
-};
-
-const fallbackChart = [
-  { label: "Mai/25", value: 1.38 },
-  { label: "Jun/25", value: 1.41 },
-  { label: "Jul/25", value: 1.39 },
-  { label: "Ago/25", value: 1.42 },
-  { label: "Set/25", value: 1.47 },
-  { label: "Out/25", value: 1.45 },
-  { label: "Nov/25", value: 1.47 },
-  { label: "Dez/25", value: 1.44 },
-  { label: "Jan/26", value: 1.42 },
-  { label: "Fev/26", value: 1.45 },
-  { label: "Mar/26", value: 1.46 },
-  { label: "Abr/26", value: 1.43 },
-  { label: "Mai/26", value: 1.44 },
-];
-
 function cleanText(value: unknown) {
   return String(value ?? "").replace(/�/g, "").trim();
 }
 
-function formatDateLabel(dateString: string) {
-  if (!dateString) return "";
-  const [day, month, year] = dateString.split("/");
-  const months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
-  const monthName = months[Number(month) - 1] || month;
-  return `${monthName}/${String(year || "").slice(-2)}`;
-}
-
 function toNumber(value: unknown) {
   const text = String(value ?? "0").trim();
-
-  if (text.includes(".") && !text.includes(",")) {
-    return Number(text.replace(/[^\d.-]/g, "")) || 0;
-  }
-
+  if (text.includes(".") && !text.includes(",")) return Number(text.replace(/[^\d.-]/g, "")) || 0;
   return Number(text.replace(/\./g, "").replace(",", ".").replace(/[^\d.-]/g, "")) || 0;
 }
 
-function SimpleLineChart({ title, description, data }: { title: string; description: string; data: { label: string; value: number }[] }) {
+function formatDateLabel(dateString: string) {
+  if (!dateString) return "";
+  const [day, month, year] = String(dateString).split("/");
+  const months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+  return `${months[Number(month) - 1] || month}/${String(year || "").slice(-2)}`;
+}
+
+function normalizeList(raw: AnyData, fallback: string[]) {
+  if (!Array.isArray(raw) || !raw.length) return fallback;
+  return raw
+    .map((item) => cleanText(item.modelo || item.marca || item.nome || item.name || item))
+    .filter(Boolean)
+    .slice(0, 20);
+}
+
+function normalizeFipeBands(raw: AnyData) {
+  if (Array.isArray(raw) && raw.length) {
+    return raw.map((band: AnyData) => ({
+      title: cleanText(band.title || band.titulo || band.nome || "Faixa de preço"),
+      items: Array.isArray(band.items)
+        ? band.items.map((item: AnyData) => cleanText(item.modelo ? `${item.modelo} • ${item.valor || ""}` : item)).filter(Boolean).slice(0, 20)
+        : [],
+    }));
+  }
+
+  return [
+    { title: "Até 30 mil", items: Array.from({ length: 20 }, (_, i) => `Veículo econômico ${i + 1}`) },
+    { title: "Até 60 mil", items: Array.from({ length: 20 }, (_, i) => `Veículo urbano ${i + 1}`) },
+    { title: "Até 90 mil", items: Array.from({ length: 20 }, (_, i) => `Veículo compacto premium ${i + 1}`) },
+    { title: "Até 150 mil", items: Array.from({ length: 20 }, (_, i) => `SUV intermediário ${i + 1}`) },
+    { title: "Até 250 mil", items: Array.from({ length: 20 }, (_, i) => `Veículo executivo ${i + 1}`) },
+    { title: "Até 500 mil", items: Array.from({ length: 20 }, (_, i) => `Veículo de luxo ${i + 1}`) },
+  ];
+}
+
+function StatCard({ title, value, subtitle, badge = "Dado real automático" }: { title: string; value: string; subtitle: string; badge?: string }) {
+  return (
+    <article className="stat-card">
+      <span>{title}</span>
+      <strong>{value}</strong>
+      <small>{subtitle}</small>
+      <em className="data-badge">{badge}</em>
+    </article>
+  );
+}
+
+function RankingCard({ title, description, items, badge = "Dado real automático" }: { title: string; description: string; items: string[]; badge?: string }) {
+  return (
+    <section className="card">
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <div className="ranking-list">
+        {items.slice(0, 20).map((item, index) => (
+          <div className="ranking-item" key={`${item}-${index}`}>
+            <span>{index + 1}</span>
+            <strong>{item}</strong>
+          </div>
+        ))}
+      </div>
+      <em className="data-badge">{badge}</em>
+    </section>
+  );
+}
+
+function SimpleLineChart({ title, description, data, badge = "Dado real automático" }: { title: string; description: string; data: { label: string; value: number }[]; badge?: string }) {
   const width = 760;
   const height = 260;
   const padding = 34;
@@ -187,25 +198,17 @@ function SimpleLineChart({ title, description, data }: { title: string; descript
 
   return (
     <section className="card chart-card">
-      <div className="card-head">
-        <div>
-          <h3>{title}</h3>
-          <p>{description}</p>
-        </div>
-      </div>
-
-      <svg viewBox={`0 0 ${width} ${height}`} className="line-chart" role="img">
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <svg viewBox={`0 0 ${width} ${height}`} className="line-chart">
         {[0, 1, 2, 3].map((row) => {
           const y = padding + (row * (height - padding * 2)) / 3;
           return <line key={row} x1={padding} y1={y} x2={width - padding} y2={y} className="grid-line" />;
         })}
-
         <polyline fill="none" stroke="#ef4444" strokeWidth="5" points={points} strokeLinecap="round" strokeLinejoin="round" />
-
         {data.map((item, index) => {
           const x = padding + (index * (width - padding * 2)) / Math.max(data.length - 1, 1);
           const y = height - padding - ((item.value - min) / range) * (height - padding * 2);
-
           return (
             <g key={`${item.label}-${index}`}>
               <circle cx={x} cy={y} r="6" fill="white" stroke="#ef4444" strokeWidth="4" />
@@ -214,38 +217,7 @@ function SimpleLineChart({ title, description, data }: { title: string; descript
           );
         })}
       </svg>
-    </section>
-  );
-}
-
-function StatCard({ title, value, subtitle }: { title: string; value: string; subtitle: string }) {
-  return (
-    <div className="stat-card">
-      <span>{title}</span>
-      <strong>{value}</strong>
-      <small>{subtitle}</small>
-    </div>
-  );
-}
-
-function RankingCard({ title, description, items }: { title: string; description: string; items: string[] }) {
-  return (
-    <section className="card">
-      <div className="card-head">
-        <div>
-          <h3>{title}</h3>
-          <p>{description}</p>
-        </div>
-      </div>
-
-      <div className="ranking-list">
-        {items.slice(0, 20).map((item, index) => (
-          <div className="ranking-item" key={`${item}-${index}`}>
-            <span>{index + 1}</span>
-            <strong>{cleanText(item)}</strong>
-          </div>
-        ))}
-      </div>
+      <em className="data-badge">{badge}</em>
     </section>
   );
 }
@@ -253,16 +225,12 @@ function RankingCard({ title, description, items }: { title: string; description
 function SourceCard({ name, use, frequency, url, status }: { name: string; use: string; frequency: string; url: string; status?: string }) {
   return (
     <article className="source-card">
-      <div>
-        <strong>{name}</strong>
-        <p>{use}</p>
-        <small>{frequency}</small>
-        {status && <em>Status: {status}</em>}
-      </div>
-
-      <a href={url} target="_blank" rel="noopener noreferrer">
-        Abrir fonte oficial
-      </a>
+      <strong>{name}</strong>
+      <p>{use}</p>
+      <small>{frequency}</small>
+      {status && <em>Status: {status}</em>}
+      <em className="data-badge">Dado real automático</em>
+      <a href={url} target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
     </article>
   );
 }
@@ -279,83 +247,114 @@ export default function App() {
         setDashboard(snapshot.exists() ? snapshot.data() : null);
         setLoading(false);
       },
-      () => {
-        setDashboard(null);
-        setLoading(false);
-      }
+      () => setLoading(false)
     );
 
     return () => unsubscribe();
   }, []);
 
+  const fonte = dashboard?.fontesReais || {};
+  const snap = dashboard?.snapshots?.["30 dias"] || dashboard?.snapshots?.["30 Dias"] || {};
+
+  const stats = {
+    carros: {
+      emplacados: cleanText(snap?.carros?.emplacados || fallbackStats.carros.emplacados),
+      transferidos: cleanText(snap?.carros?.transferidos || fallbackStats.carros.transferidos),
+      variacao: cleanText(snap?.carros?.variacao || fallbackStats.carros.variacao),
+    },
+    motos: {
+      emplacados: cleanText(snap?.motos?.emplacados || fallbackStats.motos.emplacados),
+      transferidos: cleanText(snap?.motos?.transferidos || fallbackStats.motos.transferidos),
+      variacao: cleanText(snap?.motos?.variacao || fallbackStats.motos.variacao),
+    },
+    pesados: {
+      emplacados: cleanText(snap?.pesados?.emplacados || fallbackStats.pesados.emplacados),
+      transferidos: cleanText(snap?.pesados?.transferidos || fallbackStats.pesados.transferidos),
+      variacao: cleanText(snap?.pesados?.variacao || fallbackStats.pesados.variacao),
+    },
+  };
+
   const bancoCentralChart = useMemo(() => {
-    const raw = dashboard?.bancoCentralCreditoVeiculos || dashboard?.fontesReais?.bancoCentral?.ultimos13Meses || [];
-
-    if (!Array.isArray(raw) || raw.length === 0) return fallbackChart;
-
+    const raw = dashboard?.bancoCentralCreditoVeiculos || fonte?.bancoCentral?.ultimos13Meses || [];
+    if (!Array.isArray(raw) || !raw.length) return fallbackChart;
     return raw.slice(-13).map((item: AnyData) => ({
       label: formatDateLabel(item.data),
       value: toNumber(item.valor),
     }));
   }, [dashboard]);
 
-  const fenabraveRanking = useMemo(() => {
-    const raw = dashboard?.fenabraveRankingMaisVendidos || dashboard?.fontesReais?.fenabrave?.rankingMaisVendidos || [];
+  const carrosModelos = normalizeList(
+    dashboard?.fenabraveRankingCarros?.length ? dashboard.fenabraveRankingCarros : dashboard?.fenabraveRankingMaisVendidos,
+    fallbackModels.carros
+  );
 
-    if (Array.isArray(raw) && raw.length) {
-      return raw.map((item: AnyData) => cleanText(item.modelo || item.name || item));
-    }
+  const motosModelos = normalizeList(
+    dashboard?.fenabraveRankingMotos,
+    fallbackModels.motos
+  );
 
-    return fallbackRankings.carros;
-  }, [dashboard]);
+  const pesadosModelos = normalizeList(
+    dashboard?.fenabraveRankingPesados,
+    fallbackModels.pesados
+  );
 
-  const articles = useMemo(() => {
-    const raw = dashboard?.news;
+  const carrosMarcas = normalizeList(snap?.carros?.marcas || dashboard?.top20CarBrands, fallbackBrands.carros);
+  const motosMarcas = normalizeList(snap?.motos?.marcas || dashboard?.top20MotoBrands, fallbackBrands.motos);
+  const pesadosMarcas = normalizeList(snap?.pesados?.marcas || dashboard?.top20HeavyBrands, fallbackBrands.pesados);
 
-    if (Array.isArray(raw) && raw.length) {
-      return raw.map((item: AnyData) => ({
-        ...item,
-        title: cleanText(item.title),
-        summary: cleanText(item.summary),
-        sourceName: cleanText(item.sourceName || item.fonte || "Fonte oficial"),
-        sourceUrl: item.sourceUrl || sourceLinks[item.sourceName] || "#",
-        content: Array.isArray(item.content) ? item.content.map(cleanText) : [],
-      }));
-    }
+  const fipeBands = normalizeFipeBands(dashboard?.fipeFaixasDePreco || dashboard?.fipeBands);
 
-    return fallbackArticles;
-  }, [dashboard]);
+  const states = Array.isArray(dashboard?.senatranEstados) && dashboard.senatranEstados.length
+    ? dashboard.senatranEstados
+    : Array.isArray(dashboard?.states) && dashboard.states.length
+      ? dashboard.states
+      : fallbackStates;
 
-  const fontesReais = dashboard?.fontesReais || {};
+  const cities = Array.isArray(dashboard?.senatranCidades) && dashboard.senatranCidades.length
+    ? dashboard.senatranCidades.slice(0, 10)
+    : fallbackCities;
+
+  const articles = Array.isArray(dashboard?.news) && dashboard.news.length ? dashboard.news : [];
+
+  const normalizedArticles = articles.slice(0, 6).map((item: AnyData) => ({
+    ...item,
+    title: cleanText(item.title),
+    summary: cleanText(item.summary),
+    tag: cleanText(item.tag || "Mercado"),
+    image: item.image || articleImagesByTag[item.tag] || articleImagesByTag.Carros,
+    sourceName: cleanText(item.sourceName || item.fonte || "Fonte oficial"),
+    sourceUrl: item.sourceUrl || sourceLinks[item.sourceName] || "#",
+    content: Array.isArray(item.content) ? item.content.map(cleanText) : [],
+  }));
 
   const sources = [
     {
       name: "Fenabrave",
       use: "Emplacamentos, rankings e veículos mais vendidos",
       frequency: "Mensal / automático",
-      url: fontesReais?.fenabrave?.url || sourceLinks.Fenabrave,
-      status: fontesReais?.fenabrave?.status,
+      url: fonte?.fenabrave?.url || sourceLinks.Fenabrave,
+      status: fonte?.fenabrave?.status,
     },
     {
       name: "Banco Central",
       use: "Crédito, financiamento e séries econômicas",
       frequency: "Mensal / automático",
-      url: fontesReais?.bancoCentral?.url || sourceLinks["Banco Central"],
-      status: fontesReais?.bancoCentral?.status,
+      url: fonte?.bancoCentral?.url || sourceLinks["Banco Central"],
+      status: fonte?.bancoCentral?.status,
     },
     {
       name: "SENATRAN",
       use: "Frota por estado, município e tipo de veículo",
       frequency: "Mensal / automático",
-      url: fontesReais?.senatran?.url || sourceLinks.SENATRAN,
-      status: fontesReais?.senatran?.status,
+      url: fonte?.senatran?.url || sourceLinks.SENATRAN,
+      status: fonte?.senatran?.status,
     },
     {
       name: "FIPE",
       use: "Preço médio de veículos por modelo, ano e versão",
       frequency: "Diário / automático",
-      url: fontesReais?.fipe?.url || sourceLinks.FIPE,
-      status: fontesReais?.fipe?.status,
+      url: fonte?.fipe?.url || sourceLinks.FIPE,
+      status: fonte?.fipe?.status,
     },
     {
       name: "B3 / SNG",
@@ -373,8 +372,8 @@ export default function App() {
     },
   ];
 
-  const updatedAt = dashboard?.automation?.dataBrasil || dashboard?.updatedAt || "aguardando atualização";
   const currentValue = bancoCentralChart[bancoCentralChart.length - 1]?.value?.toFixed(2).replace(".", ",") || "0,00";
+  const updatedAt = dashboard?.automation?.dataBrasil || dashboard?.updatedAt || "aguardando atualização";
 
   return (
     <div className="site">
@@ -382,16 +381,17 @@ export default function App() {
         <div>
           <span className="eyebrow">Dashboard automotivo</span>
           <h1>Mercado Automotivo Brasileiro</h1>
-          <p>
-            Painel automático com dados, fontes oficiais, histórico mensal e leitura de mercado.
-          </p>
+          <p>Painel automático com dados, fontes oficiais, histórico mensal e leitura de mercado.</p>
           <small>Última atualização: {cleanText(updatedAt)}</small>
         </div>
 
         <nav className="top-nav">
           <a href="#visao">Visão geral</a>
-          <a href="#credito">Crédito</a>
-          <a href="#rankings">Rankings</a>
+          <a href="#carros">Carros</a>
+          <a href="#motos">Motos</a>
+          <a href="#pesados">Pesados</a>
+          <a href="#fipe">FIPE</a>
+          <a href="#regioes">Regiões</a>
           <a href="#noticias">Notícias</a>
           <a href="#fontes">Fontes</a>
         </nav>
@@ -401,32 +401,130 @@ export default function App() {
 
       <main>
         <section id="visao" className="stats-grid">
-          <StatCard title="Robô de dados" value={dashboard?.robotStatus?.dados || "ativo"} subtitle="GitHub Actions + Firestore" />
-          <StatCard title="Histórico mensal" value={dashboard?.robotStatus?.historico || "ativo"} subtitle="Dados salvos mês a mês" />
-          <StatCard title="Artigos automáticos" value={dashboard?.robotStatus?.artigos || "ativo"} subtitle="Atualização quinzenal" />
+          <StatCard title="Carros emplacados" value={stats.carros.emplacados} subtitle={`${stats.carros.variacao} vs período anterior`} />
+          <StatCard title="Motos emplacadas" value={stats.motos.emplacados} subtitle={`${stats.motos.variacao} vs período anterior`} />
+          <StatCard title="Pesados emplacados" value={stats.pesados.emplacados} subtitle={`${stats.pesados.variacao} vs período anterior`} />
           <StatCard title="Crédito atual" value={`${currentValue}%`} subtitle="Banco Central / últimos 13 meses" />
         </section>
 
-        <section id="credito">
-          <SimpleLineChart
-            title="Crédito automotivo • Banco Central"
-            description="Série real coletada automaticamente e salva no Firestore com os últimos 13 meses."
-            data={bancoCentralChart}
-          />
+        <SimpleLineChart
+          title="Crédito automotivo • Banco Central"
+          description="Série real coletada automaticamente e salva no Firestore com os últimos 13 meses."
+          data={bancoCentralChart}
+        />
+
+        <section id="carros" className="section">
+          <div className="section-title">
+            <span className="eyebrow">Categoria</span>
+            <h2>Carros</h2>
+            <p>Emplacamentos, transferências, Top 20 marcas e Top 20 modelos.</p>
+          </div>
+
+          <div className="stats-grid three">
+            <StatCard title="Carros emplacados" value={stats.carros.emplacados} subtitle="Últimos 30 dias" />
+            <StatCard title="Carros transferidos" value={stats.carros.transferidos} subtitle="Base consolidada" />
+            <StatCard title="Marca líder" value={carrosMarcas[0]} subtitle="Ranking do período" />
+          </div>
+
+          <div className="grid-two">
+            <RankingCard title="Top 20 marcas de carros" description="Marcas com maior presença no painel." items={carrosMarcas} />
+            <RankingCard title="Top 20 modelos de carros" description="Modelos mais relevantes no ranking." items={carrosModelos} />
+          </div>
         </section>
 
-        <section id="rankings" className="grid-two">
-          <RankingCard
-            title="Ranking Fenabrave"
-            description="Modelos encontrados automaticamente na fonte oficial. Quando a extração não retorna ranking, o painel usa base de segurança."
-            items={fenabraveRanking}
-          />
+        <section id="motos" className="section">
+          <div className="section-title">
+            <span className="eyebrow">Categoria</span>
+            <h2>Motos</h2>
+            <p>Emplacamentos, transferências, Top 20 marcas e Top 20 modelos.</p>
+          </div>
 
-          <RankingCard
-            title="Modelos de referência"
-            description="Base auxiliar para manter o painel sempre visível enquanto as fontes oficiais são expandidas."
-            items={fallbackRankings.motos}
-          />
+          <div className="stats-grid three">
+            <StatCard title="Motos emplacadas" value={stats.motos.emplacados} subtitle="Últimos 30 dias" />
+            <StatCard title="Motos transferidas" value={stats.motos.transferidos} subtitle="Base consolidada" />
+            <StatCard title="Marca líder" value={motosMarcas[0]} subtitle="Ranking do período" />
+          </div>
+
+          <div className="grid-two">
+            <RankingCard title="Top 20 marcas de motos" description="Marcas com maior presença no painel." items={motosMarcas} />
+            <RankingCard title="Top 20 modelos de motos" description="Modelos mais relevantes no ranking." items={motosModelos} />
+          </div>
+        </section>
+
+        <section id="pesados" className="section">
+          <div className="section-title">
+            <span className="eyebrow">Categoria</span>
+            <h2>Pesados e médios transportes</h2>
+            <p>Emplacamentos, transferências, Top 20 marcas e Top 20 modelos.</p>
+          </div>
+
+          <div className="stats-grid three">
+            <StatCard title="Pesados emplacados" value={stats.pesados.emplacados} subtitle="Últimos 30 dias" />
+            <StatCard title="Pesados transferidos" value={stats.pesados.transferidos} subtitle="Base consolidada" />
+            <StatCard title="Marca líder" value={pesadosMarcas[0]} subtitle="Ranking do período" />
+          </div>
+
+          <div className="grid-two">
+            <RankingCard title="Top 20 marcas de pesados" description="Marcas com maior presença no painel." items={pesadosMarcas} />
+            <RankingCard title="Top 20 modelos de pesados" description="Modelos mais relevantes no ranking." items={pesadosModelos} />
+          </div>
+        </section>
+
+        <section id="fipe" className="section">
+          <div className="section-title">
+            <span className="eyebrow">Preços</span>
+            <h2>FIPE por faixa de preço</h2>
+            <p>Top 20 veículos por faixa. Quando a coleta real não retorna tudo, o painel usa base de segurança.</p>
+          </div>
+
+          <div className="fipe-grid">
+            {fipeBands.map((band: AnyData, index: number) => (
+              <RankingCard
+                key={`${band.title}-${index}`}
+                title={`Top 20 • ${band.title}`}
+                description={`Veículos dentro da faixa ${String(band.title).toLowerCase()}.`}
+                items={band.items}
+              />
+            ))}
+          </div>
+        </section>
+
+        <section id="regioes" className="section">
+          <div className="section-title">
+            <span className="eyebrow">Regiões</span>
+            <h2>Cidades e estados</h2>
+            <p>Leitura regional com estados e cidades em destaque.</p>
+          </div>
+
+          <div className="grid-two">
+            <section className="card">
+              <h3>Estados em destaque</h3>
+              <p>Estados com maior volume identificado no painel.</p>
+              <div className="table-list">
+                {states.slice(0, 10).map((state: AnyData, index: number) => (
+                  <div className="table-row" key={`${state.uf}-${index}`}>
+                    <strong>{cleanText(state.uf || state.nome || state.estado)}</strong>
+                    <span>{cleanText(state.nome || state.estado || "")}</span>
+                    <b>{cleanText(state.total || state.carros || state.emplacados || "")}</b>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="card">
+              <h3>Cidades em destaque</h3>
+              <p>Cidades com maior volume identificado no painel.</p>
+              <div className="table-list">
+                {cities.slice(0, 10).map((city: AnyData, index: number) => (
+                  <div className="table-row" key={`${city.cidade}-${index}`}>
+                    <strong>{cleanText(city.cidade || city.city)}</strong>
+                    <span>{cleanText(city.uf || "")}</span>
+                    <b>{cleanText(city.total || city.carros || city.emplacados || "")}</b>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
         </section>
 
         <section id="noticias" className="section">
@@ -437,19 +535,24 @@ export default function App() {
           </div>
 
           <div className="news-grid">
-            {articles.slice(0, 6).map((article: AnyData, index: number) => (
+            {normalizedArticles.map((article: AnyData, index: number) => (
               <article className="news-card" key={`${article.title}-${index}`}>
                 <div className="news-cover">
-                  <img src={article.image || articleImagesByTag[article.tag] || articleImagesByTag.Carros} alt={article.title} onError={(event) => { event.currentTarget.src = articleImagesByTag[article.tag] || articleImagesByTag.Carros; }} />
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    onError={(event) => {
+                      event.currentTarget.src = articleImagesByTag[article.tag] || articleImagesByTag.Carros;
+                    }}
+                  />
                   <span>{article.tag}</span>
                 </div>
 
                 <div className="news-body">
                   <h3>{article.title}</h3>
                   <p>{article.summary}</p>
-                  <button type="button" onClick={() => setActiveArticle(article)}>
-                    Ler tudo
-                  </button>
+                  <button type="button" onClick={() => setActiveArticle(article)}>Ler tudo</button>
+                  <em className="data-badge">Artigo automático</em>
                 </div>
               </article>
             ))}
@@ -481,16 +584,13 @@ export default function App() {
           <div className="article-modal" onClick={(event) => event.stopPropagation()}>
             <div className="article-modal-cover">
               <img src={activeArticle.image} alt={activeArticle.title} />
-              <button type="button" onClick={() => setActiveArticle(null)}>
-                Fechar
-              </button>
+              <button type="button" onClick={() => setActiveArticle(null)}>Fechar</button>
               <span>{activeArticle.tag}</span>
               <h2>{activeArticle.title}</h2>
             </div>
 
             <div className="article-modal-content">
               <strong>{activeArticle.summary}</strong>
-
               {(activeArticle.content || []).map((paragraph: string, index: number) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -498,7 +598,7 @@ export default function App() {
               <div className="article-source-box">
                 <div>
                   <span>Fonte oficial</span>
-                  <strong>{activeArticle.sourceName || "Fonte oficial"}</strong>
+                  <strong>{activeArticle.sourceName}</strong>
                   <small>{activeArticle.updatedAt || "Atualização automática"}</small>
                 </div>
 
@@ -513,5 +613,4 @@ export default function App() {
     </div>
   );
 }
-
 
