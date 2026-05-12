@@ -440,7 +440,7 @@ export default function App() {
             {articles.slice(0, 6).map((article: AnyData, index: number) => (
               <article className="news-card" key={`${article.title}-${index}`}>
                 <div className="news-cover">
-                  <img src={article.image} alt={article.title} />
+                  <img src={article.image || articleImagesByTag[article.tag] || articleImagesByTag.Carros} alt={article.title} onError={(event) => { event.currentTarget.src = articleImagesByTag[article.tag] || articleImagesByTag.Carros; }} />
                   <span>{article.tag}</span>
                 </div>
 
@@ -513,4 +513,5 @@ export default function App() {
     </div>
   );
 }
+
 
