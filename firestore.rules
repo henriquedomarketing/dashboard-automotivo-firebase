@@ -1,0 +1,19 @@
+﻿rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /dashboard/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /updateLogs/{docId} {
+      allow read: if false;
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

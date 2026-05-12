@@ -1,0 +1,30 @@
+{
+  "name": "dashboard-automotivo-firebase",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "firebase:login": "firebase login",
+    "firebase:init-project": "firebase use --add",
+    "deploy": "npm run build && firebase deploy",
+    "deploy:site": "npm run build && firebase deploy --only hosting",
+    "deploy:functions": "firebase deploy --only functions",
+    "seed": "cd functions && npm install && npm run seed"
+  },
+  "dependencies": {
+    "@firebase/firestore": "^4.14.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "firebase": "^12.13.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "tsx": "^4.21.0"
+  }
+}
